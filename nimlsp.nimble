@@ -19,7 +19,7 @@ requires "asynctools >= 0.1.1"
 #  exec "nim c -d:debugLogging -d:jsonSchemaDebug -r tests/test_messages2.nim"
 
 task debug, "Builds the language server":
-  exec "nim c --cc:clang --clang.exe="zigcc" --clang.linkerexe="zigcc" --passc:"-target x86_64-linux-musl" --passl:"-target x86_64-linux-musl" --threads:on -d:nimcore -d:nimsuggest -d:debugCommunication -d:debugLogging -o:nimlsp src/nimlsp"
+  exec "nim c --cc:clang --clang.exe='zigcc' --clang.linkerexe='zigcc' --passc:'-target x86_64-linux-musl' --passl:'-target x86_64-linux-musl' --threads:on -d:nimcore -d:nimsuggest -d:debugCommunication -d:debugLogging -o:nimlsp src/nimlsp"
 
 before test:
   exec "nimble build"
